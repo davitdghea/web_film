@@ -4,7 +4,7 @@ import Heart from './Heart'
 const MovieCards = ({ co, title, date, img }) => {
     return (
         <div className={`${co} bg-red-300  rounded-2xl relative mx-auto`}>
-            <img className={`w-fill h-full rounded-2xl  `} src={`https://image.tmdb.org/t/p/original${img}`}>
+            <img className={`w-full h-full rounded-2xl  `} src={`https://image.tmdb.org/t/p/original${img}`} alt=''>
             </img>
             <div className=' right-2 absolute top-[10px]'>
                 <Heart customStyle='w-[32px] h-[32px]' sizeIcon={14.22} />
