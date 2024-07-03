@@ -7,7 +7,7 @@ const MovieCards = ({ co, title, date, img }) => {
             <img className={`w-fill h-full rounded-2xl  `} src={`https://image.tmdb.org/t/p/original${img}`}>
             </img>
             <div className=' right-2 absolute top-[10px]'>
-                <Heart sizeDiv='w-[32px] h-[32px]' sizeIcon={14.22} />
+                <Heart customStyle='w-[32px] h-[32px]' sizeIcon={14.22} />
             </div>
             <div className='h-[86px] w-full absolute bottom-0 bg-gradient-to-r from-white to-gray'>
                 <p>{title}</p>

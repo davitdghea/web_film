@@ -24,9 +24,9 @@ const FilmDetails = () => {
                     who appear to have it all: a grand mansion, luxurious cars, and expensive designer clothing. However, behind the facade of their lavish lifestyle, there are deep-seated tensions and secrets that threaten to tear the family apart.
                 </p>
                 <div className='flex items-center mt-[25px]'>
-                    <Button title='Watch now' pad="px-[24px] py-[17px]"/>
+                    <Button title='Watch now' customStyle="px-[24px] py-[17px]"/>
                     
-                    <Heart sizeDiv='h-[54px] w-[54px]' sizeIcon={24}/>
+                    <Heart customStyle='h-[54px] w-[54px]' sizeIcon={24}/>
                 </div>
             </div>
         </div>

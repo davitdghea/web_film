@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Favourites, Home, Public, Trending } from './pages/Index'
 import path from './ultils/path';
-import ApiFilm from './store/callApi';
+import ApiFilm from './stores/trending/index.js';
 
 
 function App() {
