@@ -4,11 +4,11 @@ import Button from './Button'
 
 const FilmDetails = () => {
     return (
-        <div className='w-[1094px] h-[550px] flex items-center justify-between'>
-            <div className='bg-amber-200 w-[543px] h-[431px] flex items-center justify-center'>
+        <div className='w-full h-[550px] flex items-center justify-between gap-2'>
+            <div className='bg-amber-200 w-1/2 h-[431px] flex items-center justify-center'>
                 <span>img</span>
             </div>
-            <div className='w-[533px] h-[300px]'>
+            <div className='w-1/2 h-[300px] text-white'>
                 <div className=' flex justify-between'>
                     <h2 className='text-2xl'>House of Wealth</h2>
                     <span>star</span>
