@@ -5,13 +5,12 @@ import { Outlet } from 'react-router-dom'
 
 const Public = () => {
   return (
-    <div className='flex'>
+    <div className='flex font-poppins'>
       <Sidebar/>
-      <div className='w-full relative'>
+      <div className='w-full relative bg-zinc-800'>
        <Navbar/>
         <Outlet  />
-      </div>
-     
+      </div>  
     </div>
   )
 }

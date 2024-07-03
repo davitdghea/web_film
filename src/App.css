@@ -1,12 +1,15 @@
-.App {
-  text-align: center;
-}
+ .App {
+  /* text-align: center; */
+  font-family: poppins;
+} 
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+.slick-prev:before{
+  margin-left: 10px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
