@@ -7,7 +7,7 @@ const Public = () => {
   return (
     <div className='flex'>
       <Sidebar/>
-      <div className='w-full relative bg-zinc-800'>
+      <div className='w-full relative'>
        <Navbar/>
         <Outlet  />
       </div>

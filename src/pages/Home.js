@@ -3,7 +3,7 @@ import Button from '../components/common/Button'
 import Heart from '../components/common/Heart'
 import MovieCards from '../components/common/MovieCards'
 import FilmDetails from '../components/common/FilmDetails'
-import {AipContext} from '../stores/trending/index.js'
+import { AipContext } from '../stores/trending/index.js'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -14,7 +14,7 @@ var settings = {
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4
-}; 
+};
 
 const Home = () => {
   const { movies } = useContext(AipContext)
@@ -26,16 +26,16 @@ const Home = () => {
       </div>
       <div className='bg-gradient-to-r from-gray-500 to-gray-900 w-full max-w-[calc(100vw-274px)]'>
         <Slider {...settings}>
-        {movies.map(el =>(
-          <MovieCards title={el.title} date={el.release_date} img={el.backdrop_path}  co='w-[274px] h-[301px]' />
-        )
-        )}
-       </Slider>
+          {movies.map(el => (
+            <MovieCards title={el.title} date={el.release_date} img={el.backdrop_path} co='max-w-[255px] max-h-[301px]' />
+          )
+          )}
+        </Slider>
       </div>
-      <FilmDetails/>
+      <FilmDetails />
     </div>
-    
-    
+
+
   )
 }
 
