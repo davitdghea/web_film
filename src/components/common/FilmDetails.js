@@ -10,7 +10,7 @@ const FilmDetails = () => {
             </div>
             <div className='w-1/2 h-[300px] text-white'>
                 <div className=' flex justify-between'>
-                    <h2 className='text-2xl'>House of Wealth</h2>
+                    <h2 className='text-2xl font-semibold'>House of Wealth</h2>
                     <span>star</span>
                 </div>
                 
