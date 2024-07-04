@@ -13,7 +13,7 @@ const ApiFilm = ({ children }) => {
           page: 1
         },
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYjU4N2UzOWRhZTE1YmQ2ODkyODhjYjU4ZTBkMTZlNCIsIm5iZiI6MTcxOTk3NjE4NC4xMzg3MzYsInN1YiI6IjY2N2JlNjAxMTI1YjQ2YjY0ZTcyZDk0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xofgLjmYxRlvs-eVjeH6PWhBWkSUalRehVQ32D4jJfo`
+          Authorization: `Bearer cb587e39dae15bd689288cb58e0d16e4`
         }
       })
       setMovies(res.data.results);

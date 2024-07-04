@@ -47,8 +47,8 @@ const HomeComponents = () => {
                 <Button title="Watch now" customStyle='px-[24px] py-[17px]' />
                 <Heart customStyle='w-[54px] h-[54px]' sizeIcon={24} />
             </div> 
-            <div className=' w-full mx-4 max-w-[calc(100vw-274px)]'>
-                <span className='text-white text-left font-poppins'>Trending</span>
+            <div className=' w-full mx-4 max-w-[calc(100vw-274px)] '>
+                <span className='text-white  px-[33px] pt-[6px] text-[20px]'>Trending</span>
                     <Slider {...settings}>
                         {movies.map(el => (
                             <MovieCards title={el.title} date={el.release_date} img={el.backdrop_path} customStyle="md:w-[155px] md:h-[201px] lg:w-[255px] lg:h-[301px]" />
@@ -56,7 +56,9 @@ const HomeComponents = () => {
                         )}
                     </Slider>
             </div>
+            <div className='h-[300px]'>
 
+            </div>
         </div>
 
 
