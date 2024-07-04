@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
-    <div className='bg-black w-full max-w-[274px] pl-[40px]'>
+    <div className='bg-black w-full max-w-[274px] pl-[40px] shadow-white'>
       <Link to={path.PUBLIC}>
         <h3 className='flex pt-[35px] '>
           <Logo />
