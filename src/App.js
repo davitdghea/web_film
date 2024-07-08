@@ -4,7 +4,7 @@ import { Favourites, Home, Public, Trending } from './pages/Index'
 import path from './ultils/path';
 import ApiFilm from './stores/trending/index.js';
 import Login from './pages/Login.js';
-import DetailsMoves from './stores/DetailsMoves/index.js';
+
 function App() {
   return (
     <Router>
@@ -17,8 +17,6 @@ function App() {
               <Route path={path.Trending} element={<Trending />}></Route>
             </Route>
             <Route path={path.Login} element={<Login />}></Route>
-            <Route  element={<DetailsMoves />}></Route>
-           
           </Routes>
         </div>
       </ApiFilm>

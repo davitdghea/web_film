@@ -3,6 +3,7 @@ const path ={
     HOME:"",
     Favourites:"Favourites",
     Trending:"Trending",
-    Login:"Login"
+    Login:"Login",
+    DetailsMoves:'DetailsMoves'
 }
 export default path
