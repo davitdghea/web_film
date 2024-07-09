@@ -7,7 +7,7 @@ const DetailsMoves = ({ idFilm, callChar }) => {
     const [detail,setDetail] = useState([])
     const ApiDetail = async () =>{
 try{
-    const res = await axios.get(`https://api.themoviedb.org/3/movie/${idFilm}`,{
+    const res = await axios.get(`https://api.themoviedb.org/3/movie/${idFilm}/videos`,{
         params :{
             language: 'en-US'
         },
@@ -17,7 +17,7 @@ try{
     })
     setDetail( res.data);
     if (callChar){
-        callChar(res.data);
+        callChar(res.data.results);
     }
 } catch (error){
     console.error('Error fetching data: ', error);
