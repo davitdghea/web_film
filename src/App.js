@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Favourites, Home, Public, Trending } from './pages/Index'
 import path from './ultils/path';
 import ApiFilm from './stores/trending/index.js';
-import GetFavourites from './stores/getfavourites.js'
+import GetFavourites from './stores/Favoutites/getfavourites.js'
 import Login from './pages/Login.js';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   return (
     <Router>

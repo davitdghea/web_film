@@ -38,7 +38,7 @@ var settings = {
 
 const HomeComponents = () => {
     const { movies } = useContext(AipContext)    
-    
+    console.log(movies)
     const [selectedFilm, SetSelectedFilm] = useState(null)
     const handClick = (id) => {
         SetSelectedFilm(id)
@@ -47,7 +47,7 @@ const HomeComponents = () => {
     const handleDetailFetched = (data) => {
         setDetail(data);
     };
-    
+    console.log(detail)
     return (
         <div className='font-poppins '>
             <div className=' w-full '>
@@ -59,7 +59,8 @@ const HomeComponents = () => {
                 <Slider {...settings}>
                     {movies?.map(el => (
                         <MovieCards 
-                            key={el.id}
+                        
+                        key={el.id}
                         onCartClick={handClick} 
                         LinkYouToBe={el.LinkYouToBe} 
                         idFilm={el.id} 

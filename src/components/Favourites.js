@@ -1,59 +1,35 @@
-import React, { useContext } from 'react'
-import { Favouritescontext } from '../stores/getfavourites'
-import Slider from "react-slick";
+import React, { useContext, useState } from 'react'
+import { Favouritescontext } from '../stores/Favoutites/getfavourites'
 import MovieCards from './common/MovieCards'
-var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    responsive: [
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-            },
-        },
-        {
-            breakpoint: 1364,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-            },
-        },
-        {
-            breakpoint: 900,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-            },
-        },
-    ],
-};
+
 const FavouritesComPoNents = () => {
     const { getFavourites } = useContext(Favouritescontext)
-    
-  return (
-    <div className=' w-full mx-4 max-w-[calc(100vw-274px)] '>
-        <div className=' text-white px-[33px] pt-[70px] text-[20px]'>
-          <Slider {...settings}>
-          {getFavourites?.map(el=>(
-            
-              <MovieCards
-              key={el.id} 
-              customStyle="md:w-[205px] md:h-[201px] lg:w-[255px] lg:h-[301px]" 
-              title={el.title} 
-              date={el.release_date} 
-              img={el.backdrop_path} 
-              idFilm={el.id}></MovieCards>
-          ))
-          }
-          </Slider>
-    </div>
-    </div>
-  )
+    console.log(getFavourites)
+    const [selectedFilm, SetSelectedFilm] = useState(null)
+    const handClick = (id) => {
+        SetSelectedFilm(id)
+    }
+    return (
+        <div className=' w-full mx-4 max-w-[calc(100vw-274px)] '>
+            <div className=' text-white w-full max-w-[1500px] ml-[10px] mt-[130px] text-[20px] '>
+                <span>Favourites</span>
+                <div className='flex flex-wrap'>
+                    {getFavourites?.map(el => (
+                        <MovieCards
+                            onCartClick={handClick}
+                            key={el.id}
+                            customStyle="truncate md:w-[205px] md:h-[201px] lg:w-[345px] lg:h-[259x] mr-[30px] "
+                            title={el.title}
+                            date={el.release_date}
+                            img={el.backdrop_path}
+                            idFilm={el.id}>
+                        </MovieCards>
+                    ))
+                    }
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default FavouritesComPoNents
