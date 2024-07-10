@@ -2,6 +2,8 @@ const path ={
     PUBLIC: '/',
     HOME:"",
     Favourites:"Favourites",
-    Trending:"Trending"
+    Trending:"Trending",
+    Login:"Login",
+    DetailsMoves:'DetailsMoves'
 }
 export default path

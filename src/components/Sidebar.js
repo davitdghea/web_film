@@ -41,7 +41,7 @@ const Sidebar = () => {
           <Icon7 />
           <span className='font-poppins size-[22px] text-white ml-3'>Settings</span>
         </div></Link>
-        <Link to={path.HOME}><div className='flex'>
+        <Link to={path.Login}><div className='flex'>
           <Icon8 />
           <span className='font-poppins size-[22px] text-white ml-3 ' >Logout</span>
         </div></Link>

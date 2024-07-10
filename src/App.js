@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Favourites, Home, Public, Trending } from './pages/Index'
 import path from './ultils/path';
 import ApiFilm from './stores/trending/index.js';
-
+import Login from './pages/Login.js';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
               <Route path={path.Favourites} element={<Favourites />}></Route>
               <Route path={path.Trending} element={<Trending />}></Route>
             </Route>
+            <Route path={path.Login} element={<Login />}></Route>
           </Routes>
         </div>
       </ApiFilm>
