@@ -1,16 +1,17 @@
 import React from 'react'
 import Heart from '../common/Heart'
 import Button from '../common/Button'
-const DetailsFilm = ({ title, status, release_date, IdYouToBe }) => {
+const DetailsFilm = ({ title, status, IdYouToBe }) => {
+   
     return (
         <div className='flex w-full relative  h-full max-h-[455px]  text-white'>
 
             {IdYouToBe ?
                 <div className='w-full max-w-[1560px] h-full max-h-[455px]'>
-                    <iframe width="100%" height="455" src={`https://www.youtube.com/embed/${IdYouToBe}`} frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="455" src={`https://www.youtube.com/embed/${IdYouToBe}`} frameBorder="0" allowFullScreen title=""></iframe>
                     <div className='flex flex-col z-10 absolute bottom-[53px] pl-[32px]'>
                         <p className=' text-[48px] pb-[20px]'>{status}</p>
-                        <span className='z-10 flex pb-[36px] text-[14px]'>{release_date} | {title} |</span>
+                        <span className='z-10 flex pb-[36px] text-[14px]'> {title} </span>
                         <span className='flex'><Button title=' Watch now ' customStyle='px-[24px] py-[17px]' /> <Heart customStyle='p-[15px]' sizeIcon={24} /></span>
                     </div>
                 </div>

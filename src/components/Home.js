@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import MovieCards from '../components/common/MovieCards'
 import DetailsMoves from '../stores/DetailsMoves'
 import { AipContext } from '../stores/trending/index.js'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import DetailsFilm from './details/Index.js'
 
@@ -39,48 +37,31 @@ var settings = {
 };
 
 const HomeComponents = () => {
-    const { movies } = useContext(AipContext)
-    const [moviesFa, setMoviesFa] = useState(movies)
-    useEffect(() => {
-        setMoviesFa(movies); 
-    }, [movies]);
-    
-    const handleVideoClick = (id) => {
-        setMoviesFa(prevList =>
-            prevList.map(movie =>
-                movie.id === id ? { ...movie, video: !movie.video } : movie
-            )
-        );
-    };
-    console.log(moviesFa)
+    const { movies } = useContext(AipContext)    
+    console.log(movies)
     const [selectedFilm, SetSelectedFilm] = useState(null)
     const handClick = (id) => {
         SetSelectedFilm(id)
-    }
-    const [IdYouToBe, SetIdYouToBe] = useState(false)
-    const handClickIdYouToBe = (id) => {
-        SetIdYouToBe(id)
     }
     const [detail, setDetail] = useState('');
     const handleDetailFetched = (data) => {
         setDetail(data);
     };
-
+    console.log(detail)
     return (
         <div className='font-poppins '>
             <div className=' w-full '>
                 {selectedFilm && <DetailsMoves idFilm={selectedFilm} callChar={handleDetailFetched} />}
-                <DetailsFilm  homepage={detail.homepage} IdYouToBe={IdYouToBe} title={detail.title} status={detail.status} release_date={detail.release_date} />
+                {<DetailsFilm IdYouToBe={detail[0]?.key} title={detail[0]?.name} status={detail[0]?.type}  />}
             </div>
             <div className=' w-full mx-4 max-w-[calc(100vw-274px)] '>
                 <span className='text-white  px-[33px] pt-[6px] text-[20px]'>Trending</span>
                 <Slider {...settings}>
-                    {moviesFa.map(el => (
+                    {movies?.map(el => (
                         <MovieCards 
-                        onFavourites={handleVideoClick} 
-                        handleVideoClick  
+                        
+                        key={el.id}
                         onCartClick={handClick} 
-                        LinkYouToBeClick={handClickIdYouToBe} 
                         LinkYouToBe={el.LinkYouToBe} 
                         idFilm={el.id} 
                         title={el.title} 
