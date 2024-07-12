@@ -1,9 +1,10 @@
-import React, { createContext, useEffect, useState } from 'react'
+import  { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
 
 export const callDetailsMoves = createContext()
 const DetailsMoves = ({ idFilm, callChar }) => {
+   
     const [detail,setDetail] = useState([])
     const ApiDetail = async () =>{
 try{
