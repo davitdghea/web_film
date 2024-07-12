@@ -48,6 +48,7 @@ const YOUR_ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYjU4N2UzOWRhZTE1YmQ2
 
 const GetFavourites = ({ children }) => {
     const [getFavourites, setGetFavourites] = useState([])
+    const [movieFovorates, setMovieFovorates] = useState([])
     const Main = async () => {
        
             try {
@@ -69,12 +70,37 @@ const GetFavourites = ({ children }) => {
                 console.error('Error adding favorite:', error);
             }
         };;
+    const fetchMovieDetails = async (movieId) => {
+        try {
+            const res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+                params: {
+                    language: 'en-US'
+                },
+                headers: {
+                    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYjU4N2UzOWRhZTE1YmQ2ODkyODhjYjU4ZTBkMTZlNCIsIm5iZiI6MTcyMDQyMTEyNC43MDEwOTUsInN1YiI6IjY2N2JlNjAxMTI1YjQ2YjY0ZTcyZDk0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i7dn_Ytdv55IaSclbifUAYz2jIRIxQZDDCN0Yxc2gPY`
+                }
+            });
+            const movieDetail = res.data;
+            setMovieFovorates(prevDetails => [...prevDetails, movieDetail]);
+        } catch (error) {
+            console.error(`Error fetching details for movie with ID ${movieId}: `, error);
+        }
+    };
     
     useEffect(() => {
         Main()
-    }, [])
+    }, [children])
+    useEffect(() => {
+        getFavourites.map(movie=>{
+            fetchMovieDetails(movie.id)
+        })
+    }, [getFavourites])
+    const MovieFovotites = movieFovorates.filter((movie, index, self) => {return index === self.findIndex((t) =>(
+        t.id === movie.id  
+    ))})
+
     return (
-        <Favouritescontext.Provider value={{ getFavourites, Main }}>
+        <Favouritescontext.Provider value={{ MovieFovotites, Main }}>
                 {children}
             </Favouritescontext.Provider>
         )

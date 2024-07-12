@@ -3,8 +3,8 @@ import { Favouritescontext } from '../stores/Favoutites/getfavourites'
 import MovieCards from './common/MovieCards'
 
 const FavouritesComPoNents = () => {
-    const { getFavourites } = useContext(Favouritescontext)
-    console.log(getFavourites)
+    const { MovieFovotites } = useContext(Favouritescontext)
+    console.log(MovieFovotites)
     const [selectedFilm, SetSelectedFilm] = useState(null)
     const handClick = (id) => {
         SetSelectedFilm(id)
@@ -14,9 +14,11 @@ const FavouritesComPoNents = () => {
             <div className=' text-white w-full max-w-[1500px] ml-[10px] mt-[130px] text-[20px] '>
                 <span>Favourites</span>
                 <div className='flex flex-wrap'>
-                    {getFavourites?.map(el => (
+                    {MovieFovotites?.map(el => (
                         <MovieCards
+                            heart = {false}
                             onCartClick={handClick}
+                            genres={el.genres[0].name}
                             key={el.id}
                             customStyle="truncate md:w-[205px] md:h-[201px] lg:w-[345px] lg:h-[259x] mr-[30px] "
                             title={el.title}

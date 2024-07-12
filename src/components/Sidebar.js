@@ -13,38 +13,54 @@ const Sidebar = () => {
         </h3>
       </Link>
       <div className='flex flex-col gap-[35px] mt-[35px]'>
-        <Link to={path.HOME}><div className='flex'>
-          <Icon1 />
-          <span className='font-poppins size-[22px] text-white ml-3' >Home</span>
-        </div></Link>
-        <Link to={path.Favourites}><div className='flex'>
-          <Icon2 />
-          <span className='font-poppins size-[22px] text-white ml-3' >Favourites</span>
-        </div></Link>
-        <Link to={path.Trending}><div className='flex'>
-          <Icon3 />
-          <span className='font-poppins size-[22px] text-white ml-3 ' >Trending</span>
-        </div></Link>
-        <Link to={path.HOME}><div className='flex'>
-          <Icon4 />
-          <span className='font-poppins size-[22px] text-white ml-3'>Coming</span>
-        </div></Link>
-        <Link to={path.HOME}><div className='flex mt-[125px]'>
-          <Icon5 />
-          <span className='font-poppins size-[22px] text-white ml-3'>Community</span>
-        </div></Link>
-        <Link to={path.HOME}><div className='flex'>
-          <Icon6 />
-          <span className='font-poppins size-[22px] text-white ml-3' >Social</span>
-        </div></Link>
-        <Link to={path.HOME}><div className='flex mt-[265px]'>
-          <Icon7 />
-          <span className='font-poppins size-[22px] text-white ml-3'>Settings</span>
-        </div></Link>
-        <Link to={path.Login}><div className='flex'>
-          <Icon8 />
-          <span className='font-poppins size-[22px] text-white ml-3 ' >Logout</span>
-        </div></Link>
+        <div >
+          <Link className='flex' to={path.HOME}>
+            <Icon1 />
+            <span className='font-poppins size-[22px] text-white ml-3' >Home</span>
+          </Link>
+        </div>
+        <div >
+          <Link className='flex' to={path.Favourites}>
+            <Icon2 />
+            <span className='font-poppins size-[22px] text-white ml-3' >Favourites</span>
+          </Link>
+        </div>
+        <div >
+          <Link className='flex' to={path.Trending}>
+            <Icon3 />
+            <span className='font-poppins size-[22px] text-white ml-3 ' >Trending</span>
+          </Link>
+        </div>
+        <div >
+          <Link className='flex' to={path.HOME}>
+            <Icon4 />
+            <span className='font-poppins size-[22px] text-white ml-3'>Coming</span>
+          </Link>
+        </div>
+        <div className=' mt-[125px]'>
+          <Link to={path.HOME} className='flex'>
+            <Icon5 />
+            <span className='font-poppins size-[22px] text-white ml-3'>Community</span>
+          </Link>
+        </div>
+        <div >
+          <Link className='flex' to={path.HOME}>
+            <Icon6 />
+            <span className='font-poppins size-[22px] text-white ml-3' >Social</span>
+          </Link>
+        </div>
+        <div className=' mt-[265px]'>
+          <Link to={path.HOME} className='flex'>
+            <Icon7 />
+            <span className='font-poppins size-[22px] text-white ml-3'>Settings</span>
+          </Link>
+        </div>
+        <div >
+          <Link className='flex' to={path.Login}>
+            <Icon8 />
+            <span className='font-poppins size-[22px] text-white ml-3 ' >Logout</span>
+          </Link>
+        </div>
       </div>
     </div>
   )

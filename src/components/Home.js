@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import MovieCards from '../components/common/MovieCards'
 import DetailsMoves from '../stores/DetailsMoves'
 import { AipContext } from '../stores/trending/index.js'
@@ -37,8 +37,8 @@ var settings = {
 };
 
 const HomeComponents = () => {
-    const { movies } = useContext(AipContext)    
-    console.log(movies)
+    const { mergedArray } = useContext(AipContext)    
+    console.log(mergedArray)
     const [selectedFilm, SetSelectedFilm] = useState(null)
     const handClick = (id) => {
         SetSelectedFilm(id)
@@ -47,7 +47,7 @@ const HomeComponents = () => {
     const handleDetailFetched = (data) => {
         setDetail(data);
     };
-    console.log(detail)
+ 
     return (
         <div className='font-poppins '>
             <div className=' w-full '>
@@ -57,9 +57,9 @@ const HomeComponents = () => {
             <div className=' w-full mx-4 max-w-[calc(100vw-274px)] '>
                 <span className='text-white  px-[33px] pt-[6px] text-[20px]'>Trending</span>
                 <Slider {...settings}>
-                    {movies?.map(el => (
+                    {mergedArray?.map(el => (
                         <MovieCards 
-                        
+                        genres={el.genres[0].name}
                         key={el.id}
                         onCartClick={handClick} 
                         LinkYouToBe={el.LinkYouToBe} 
