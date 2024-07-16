@@ -16,7 +16,8 @@ const FavouritesComPoNents = () => {
                 <div className='flex flex-wrap'>
                     {MovieFovotites?.map(el => (
                         <MovieCards
-                            heart = {false}
+                            display="none"
+                            favorite = {true}
                             onCartClick={handClick}
                             genres={el.genres[0].name}
                             key={el.id}

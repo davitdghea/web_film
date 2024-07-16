@@ -59,6 +59,7 @@ const HomeComponents = () => {
                 <Slider {...settings}>
                     {mergedArray?.map(el => (
                         <MovieCards 
+                        favorite={el.favorite}
                         genres={el.genres[0].name}
                         key={el.id}
                         onCartClick={handClick} 
