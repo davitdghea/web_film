@@ -19,7 +19,7 @@ function App() {
               <Route path={path.Favourites} element={<Favourites />}></Route>
               <Route path={path.Trending} element={<Trending />}></Route>
             </Route>
-            <Route path={path.Login} element={<Login />}></Route>
+            <Route path={path.Login} element={<ApiFilm />}></Route>
           </Routes>
         </div>
       </ApiFilm>
