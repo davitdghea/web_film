@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MovieCards from '../components/common/MovieCards'
 import DetailsMoves from '../stores/DetailsMoves'
 import { AipContext } from '../stores/trending/index.js'
 import Slider from "react-slick";
 import DetailsFilm from './details/Index.js'
-
+import ApiFilm from '../stores/trending/index.js';
 var settings = {
     dots: true,
     infinite: true,
@@ -38,7 +38,12 @@ var settings = {
 
 const HomeComponents = () => {
     const { mergedArray } = useContext(AipContext)    
-    console.log(mergedArray)
+    const [database, setDatabase] = useState(mergedArray)
+   
+    useEffect(() => {
+        setDatabase(mergedArray);
+    }, [mergedArray]);
+    console.log(database)
     const [selectedFilm, SetSelectedFilm] = useState(null)
     const handClick = (id) => {
         SetSelectedFilm(id)
@@ -51,6 +56,7 @@ const HomeComponents = () => {
     return (
         <div className='font-poppins '>
             <div className=' w-full '>
+                <ApiFilm/>
                 {selectedFilm && <DetailsMoves idFilm={selectedFilm} callChar={handleDetailFetched} />}
                 {<DetailsFilm IdYouToBe={detail[0]?.key} title={detail[0]?.name} status={detail[0]?.type}  />}
             </div>

@@ -27,3 +27,4 @@ export const Favorites = ({ idFilm }) => {
         Main()
     }, [MOVIE_ID])
 }
+
