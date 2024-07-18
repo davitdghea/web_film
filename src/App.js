@@ -4,6 +4,9 @@ import { Favourites, Home, Public, Trending } from './pages/Index'
 import path from './ultils/path';
 import ApiFilm from './stores/trending/index.js';
 
+import Login from './pages/Login.js';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
@@ -16,6 +19,7 @@ function App() {
               <Route path={path.Favourites} element={<Favourites />}></Route>
               <Route path={path.Trending} element={<Trending />}></Route>
             </Route>
+            <Route path={path.Login} element={<ApiFilm />}></Route>
           </Routes>
         </div>
       </ApiFilm>
