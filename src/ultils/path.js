@@ -4,6 +4,7 @@ const path ={
     Favourites:"Favourites",
     Trending:"Trending",
     Login:"Login",
+   
     DetailsMoves:'DetailsMoves'
 }
 export default path

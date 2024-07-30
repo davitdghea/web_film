@@ -2,29 +2,39 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 
-const YOUR_ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYjU4N2UzOWRhZTE1YmQ2ODkyODhjYjU4ZTBkMTZlNCIsIm5iZiI6MTcyMDUwNjkzMC42Mzg2NjksInN1YiI6IjY2N2JlNjAxMTI1YjQ2YjY0ZTcyZDk0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XEiAv8Deb0F7d7cXjYyy2jb4YfobeZnSo9vOg-fc3gI';
-export const Favorites = ({ idFilm }) => {
+
+export const Favorites = ({ idFilm, onComplete }) => {
     const MOVIE_ID = idFilm;
+    const sessionId = localStorage.getItem('sessionId')
+    useEffect(() => {
     const Main = async () => {
+        
         try {
-            const response = await axios.post(`https://api.themoviedb.org/3/account/546357/favorite`, {
-                media_type: 'movie',
-                media_id: MOVIE_ID,
-                favorite: true
-            }, {
-                headers: {
-                    Authorization: `Bearer ${YOUR_ACCESS_TOKEN}`,
-                    'Content-Type': 'application/json'
+            const response = await axios.post(
+                `https://api.themoviedb.org/3/account/21350099/favorite`,
+                {
+                    media_type: 'movie',
+                    media_id: MOVIE_ID, 
+                    favorite: true 
                 },
-            });
+                {
+                    params: {
+                        api_key: process.env.REACT_APP_API_TOKEN,
+                        session_id: sessionId
+                    }
+                }
+            );
 
             console.log('Add favorite response:', response.data);
+            onComplete()
         } catch (error) {
-            console.error('Error adding favorite:', error);
+            console.error('Error adding favorite:', error.response?.data || error.message);
+            onComplete()
         }
     };
-    useEffect(() => {
-        Main()
-    }, [MOVIE_ID])
-}
 
+    // Sử dụng hàm
+    Main();
+    }, [MOVIE_ID, sessionId, onComplete]);
+    return null;
+}

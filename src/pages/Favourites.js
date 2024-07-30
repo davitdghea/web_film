@@ -1,11 +1,12 @@
 import React from 'react'
 import FavouritesComPoNents from '../components/Favourites'
-import GetFavourites from '../stores/Favoutites/getfavourites.js'
+import ApiFilm from '../stores/trending'
+
 const Favourites = () => {
   return (   
-    <GetFavourites>
+    <ApiFilm>
       <FavouritesComPoNents/>
-    </GetFavourites>
+    </ApiFilm>
   )
 }
 
