@@ -1,10 +1,11 @@
 import React from 'react'
-
+import FavouritesComPoNents from '../components/Favourites'
+import GetFavourites from '../stores/Favoutites/getfavourites.js'
 const Favourites = () => {
-  return (
-    <div>
-      tradvvhv
-    </div>
+  return (   
+    <GetFavourites>
+      <FavouritesComPoNents/>
+    </GetFavourites>
   )
 }
 
