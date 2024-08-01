@@ -4,13 +4,13 @@ import { FaUser } from "react-icons/fa";
 import { FaRegBell } from "react-icons/fa";
 const Navbar = () => {
     return (
-        <div className='flex h-[32px] justify-between items-center mt-[40px] ml-[25px] absolute w-full max-w-[1492px] z-10'>
-            <div className='w-[294px] flex justify-between text-white'>
+        <div className='flex h-[32px] lg:justify-between items-center lg:mt-[40px] lg:ml-[25px] justify-end mr-[10px] absolute w-full max-w-[1000px] z-20'>
+            <div className='lg:flex hidden w-full max-w-[294px]  justify-between text-white'>
                 <span className='cursor-pointer'>Movies</span>
                 <span className='cursor-pointer'>Series</span>
                 <span className='cursor-pointer'>Documentaries</span>
             </div>
-            <div className='w-[194px] flex justify-between text-white items-center'>
+            <div className='w-full lg:max-w-[194px] max-w-[100px] flex justify-between sm:float-right text-white items-center'>
                 <span className='cursor-pointer'><IoIosSearch /></span>
                 <span className='cursor-pointer'><FaRegBell/></span>
                 <span className='cursor-pointer flex items-center'><FaUser />

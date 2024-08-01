@@ -2,17 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
 button.slick-next {
-    z-index: 10;
+    z-index: 8;
+    display: none;
 }
 
 button.slick-prev {
-    z-index: 10;
+    z-index: 8;
+    display: none;
 }
 button.slick-prev:before {
     position:absolute;
-    left: 20px;
-    z-index: 10;
+    left: 10px;
+    z-index: 8;
     color: rgb(212, 204, 204);
     content: '\276E';
     border-radius: 10px;
@@ -20,12 +23,16 @@ button.slick-prev:before {
     color: black;
     height: 80px;
     font-size: 30px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgb(216, 208, 208);
     
 
+}
+.slick-slide {
+    width: 200px;
+   
 }
 
 button.slick-next:before {
@@ -37,10 +44,25 @@ button.slick-next:before {
     color: black;
     width: 80px;
     height: 80px;
-    right: 20px;
+    right: 15px;
     font-size: 30px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgb(216, 208, 208);
 }
+@media (min-width: 768px) {
+    button.slick-prev:before {
+        display: flex;
+    }
+    button.slick-next:before{
+        display: flex;
+        }
+}
+
+.slick-slide {
+    box-sizing: border-box;
+    padding: 0 5px;
+    /* Khoảng cách giữa các slide */
+}
+
