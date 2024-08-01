@@ -5,12 +5,18 @@ import { Outlet } from 'react-router-dom'
 
 const Public = () => {
   return (
-    <div className='flex font-poppins bg-gradient-to-r from-customPurple via-customDarkGray to-customDarkGray'>
-      <Sidebar/>
-      <div className='w-full relative bg-zinc-800'>
-       <Navbar/>
+    <div className='bg-black lg:flex w-full  font-poppins h-100vh'>
+      
+        <Sidebar />
+      
+      
+      <div className=' lg:ml-[274px] w-full lg:max-w-[calc(100vw-274px)] h-100vh relative bg-zinc-800 flex  justify-end pr-7'>
+        
+        <Navbar/>
         <Outlet  />
+       
       </div>  
+     
     </div>
   )
 }
